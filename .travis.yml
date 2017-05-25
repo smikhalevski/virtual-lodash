@@ -1,18 +1,9 @@
 language: node_js
 node_js:
   - 6.1
-before_install:
-  - git config --global user.name 'smikhalevski'
-  - git config --global user.email 'smikhalevski@gmail.com'
 install:
   - npm i
   - npm run build
-deploy:
-  provider: script
-  skip_cleanup: true
-  on:
-    branch: master
-  script: >
-    set -ex;
-    bash deploy.sh;
-    git push origin HEAD:$TRAVIS_BRANCH;
+after_success:
+  - chmod +x deploy.sh
+  - source deploy.sh
