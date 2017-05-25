@@ -1,0 +1,26 @@
+language: node_js
+node_js:
+  - 6.1
+before_install:
+  - git config --global user.name 'smikhalevski'
+  - git config --global user.email 'smikhalevski@gmail.com'
+install:
+  - npm i
+  - npm run build
+deploy:
+  provider: script
+  skip_cleanup: true
+  on:
+    branch: master
+  api_key: $NPM_TOKEN
+  script: >
+    set -ex;
+    VERSION=$(npm v lodash version);
+    if grep -q $VERSION package.json;
+      then VERSION=$VERSION-$TRAVIS_BUILD_NUMBER;
+    fi;
+    npm version "$VERSION" -m 'Release v%s';
+    cp package.json build/package.json;
+    cd build;
+    npm publish;
+    git push origin HEAD:$TRAVIS_BRANCH;
