@@ -2,7 +2,7 @@
 
 set -ex;
 
-LODASH_VERSION=$(npm v lodash version);
+LODASH_VERSION='4.17.0';
 
 if ! grep -q "$LODASH_VERSION" package.json;
 then
