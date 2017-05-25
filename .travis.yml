@@ -1,5 +1,5 @@
 language: node_js
-node_js: 6.1
+node_js: 7.3
 deploy:
   provider: script
   skip_cleanup: true
