@@ -3,8 +3,8 @@
 set -ex;
 
 git config core.filemode false
-git config --global user.name 'smikhalevski'
-git config --global user.email 'smikhalevski@gmail.com'
+git config user.name 'smikhalevski'
+git config user.email 'smikhalevski@gmail.com'
 
 npm run build;
 

@@ -3,6 +3,6 @@ node_js: 6.1
 deploy:
   provider: script
   skip_cleanup: true
-  script: chmod +x deploy.sh && deploy.sh
+  script: chmod +x deploy.sh && ./deploy.sh
   on:
     branch: master
