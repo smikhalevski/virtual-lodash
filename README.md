@@ -1,7 +1,7 @@
 # virtual-lodash
 
-[![npm version](https://badge.fury.io/js/virtual-lodash.svg)](https://www.npmjs.com/package/virtual-lodash)
-[![travis ci status](https://travis-ci.org/smikhalevski/virtual-lodash.svg)](https://travis-ci.org/smikhalevski/virtual-lodash)
+[![npm version](https://badge.fury.io/js/virtual-lodash.svg?maxAge=600)](https://www.npmjs.com/package/virtual-lodash)
+[![travis ci status](https://travis-ci.org/smikhalevski/virtual-lodash.svg?maxAge=600)](https://travis-ci.org/smikhalevski/virtual-lodash)
 
 Wrapper functions for [Lodash](https://lodash.com) that can be used as virtual methods with [es6 bind operator](https://github.com/tc39/proposal-bind-operator).
 
