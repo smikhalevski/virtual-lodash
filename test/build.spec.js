@@ -15,7 +15,7 @@ describe('build.js', () => {
 
 module.exports = function invokeMap() {
   var length = arguments.length;
-  var args = new Array(length + 1);
+  var args = Array(length + 1);
   args[0] = this;
   for (var i = 0; i < length; ++i) {
     args[i + 1] = arguments[i];
