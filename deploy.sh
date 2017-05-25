@@ -2,7 +2,7 @@
 
 set -ex;
 
-LODASH_VERSION='4.17.0';
+LODASH_VERSION='4.17.0-test';
 
 if ! grep -q "$LODASH_VERSION" package.json;
 then
