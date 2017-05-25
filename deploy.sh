@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -ex;
+
 git config core.filemode false
 git config --global user.name 'smikhalevski'
 git config --global user.email 'smikhalevski@gmail.com'
