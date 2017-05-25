@@ -1,6 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 set -ex;
+
+npm run build;
 
 VERSION=$(npm v lodash version);
 if grep -q "$VERSION" package.json;
