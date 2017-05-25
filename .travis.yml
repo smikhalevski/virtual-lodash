@@ -12,4 +12,7 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
-  script: source deploy.sh
+  script: >
+    set -ex;
+    bash deploy.sh;
+    git push origin HEAD:$TRAVIS_BRANCH;

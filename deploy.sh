@@ -12,4 +12,4 @@ cd build;
 
 npm config set '//registry.npmjs.org/:_authToken' "$NPM_TOKEN";
 npm publish;
-git push origin HEAD:$TRAVIS_BRANCH;
+
