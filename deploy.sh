@@ -7,7 +7,6 @@ LODASH_VERSION='4.17.0';
 if ! grep -q "$LODASH_VERSION" package.json;
 then
 
-  npm run build;
   npm version "$LODASH_VERSION" -m 'Release v%s';
 
   cp README.md LICENSE package.json build;
