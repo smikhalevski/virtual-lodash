@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - 6.1
+before_install:
+  - git config --global user.name 'smikhalevski'
+  - git config --global user.email 'smikhalevski@gmail.com'
 install:
   - npm i
   - npm run build
@@ -9,4 +12,4 @@ deploy:
   skip_cleanup: true
   on:
     branch: master
-  script: deploy.sh
+  script: source deploy.sh
