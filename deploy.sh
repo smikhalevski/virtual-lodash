@@ -20,4 +20,5 @@ cd build;
 npm config set '//registry.npmjs.org/:_authToken' "$NPM_TOKEN";
 npm publish;
 
+git remote add origin https://${GH_TOKEN}@github.com/smikhalevski/virtual-lodash.git
 git push origin HEAD:$TRAVIS_BRANCH;
