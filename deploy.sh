@@ -2,23 +2,22 @@
 
 set -ex;
 
-git config core.filemode false
-git config user.name 'smikhalevski'
-git config user.email 'smikhalevski@gmail.com'
+LODASH_VERSION=$(npm v lodash version);
 
-npm run build;
+if ! grep -q "$LODASH_VERSION" package.json;
+then
 
-VERSION=$(npm v lodash version);
-if grep -q "$VERSION" package.json;
- then VERSION=$VERSION-$TRAVIS_BUILD_NUMBER;
+  npm run build;
+  npm version "$LODASH_VERSION" -m 'Release v%s';
+
+  cp README.md LICENSE package.json build;
+  cd build;
+
+  npm config set '//registry.npmjs.org/:_authToken' "$NPM_TOKEN";
+  npm publish;
+
+  git config core.filemode false
+  git remote set-url origin https://${GH_TOKEN}@github.com/smikhalevski/virtual-lodash.git
+  git push origin HEAD:$TRAVIS_BRANCH;
+
 fi;
-npm version "$VERSION" -m 'Release v%s';
-
-cp README.md LICENSE package.json build;
-cd build;
-
-npm config set '//registry.npmjs.org/:_authToken' "$NPM_TOKEN";
-npm publish;
-
-git remote set-url origin https://${GH_TOKEN}@github.com/smikhalevski/virtual-lodash.git
-git push origin HEAD:$TRAVIS_BRANCH;
