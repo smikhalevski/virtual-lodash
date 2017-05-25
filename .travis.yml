@@ -20,7 +20,7 @@ deploy:
       then VERSION=$VERSION-$TRAVIS_BUILD_NUMBER;
     fi;
     npm version "$VERSION" -m 'Release v%s';
-    cp package.json build/package.json;
+    cp README.md LICENSE package.json build;
     cd build;
     npm publish;
     git push origin HEAD:$TRAVIS_BRANCH;
