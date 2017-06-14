@@ -14,6 +14,7 @@ describe('build.js', () => {
     assert.equal(invokeMapSource, `var _invokeMap = require('lodash/invokeMap');
 
 module.exports = function invokeMap() {
+  'use strict';
   var length = arguments.length;
   var args = Array(length + 1);
   args[0] = this;
@@ -31,6 +32,7 @@ module.exports = function invokeMap() {
     assert.equal(isArraySource, `var _isArray = require('lodash/isArray');
 
 module.exports = function isArray() {
+  'use strict';
   var length = arguments.length;
   var args = Array(length + 1);
   args[0] = this;
@@ -48,6 +50,7 @@ module.exports = function isArray() {
     assert.equal(camelCaseSource, `var _camelCase = require('lodash/camelCase');
 
 module.exports = function camelCase() {
+  'use strict';
   return _camelCase(this);
 };
 `);
