@@ -22,6 +22,7 @@ For example, here is a wrapper function for `cloneWith` that has fixed [arity](h
 var _cloneWith = require('lodash/cloneWith');
 
 module.exports = function cloneWith(customizer) {
+  'use strict';
   return _cloneWith(this, customizer);
 };
 ```
@@ -31,6 +32,7 @@ On the other hand, `union` method uses `arguments` object and so does correspond
 var _union = require('lodash/union');
 
 module.exports = function union() {
+  'use strict';
   var length = arguments.length;
   var args = Array(length + 1);
   args[0] = this;
