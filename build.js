@@ -13,6 +13,7 @@ function createModuleSource(key, value) {
     return `var _${key} = require('lodash/${key}');
 
 module.exports = function ${key}() {
+  'use strict';
   var length = arguments.length;
   var args = Array(length + 1);
   args[0] = this;
@@ -30,6 +31,7 @@ module.exports = function ${key}() {
     return `var _${key} = require('lodash/${key}');
 
 module.exports = function ${key}(${params.slice(1)}) {
+  'use strict';
   return _${key}(${params});
 };`;
   }
