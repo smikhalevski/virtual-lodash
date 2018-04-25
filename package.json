@@ -1,6 +1,6 @@
 {
   "name": "virtual-lodash",
-  "version": "4.17.5",
+  "version": "4.17.10",
   "description": "Lodash virtual bindings",
   "author": "Savva Mikhalevski",
   "license": "MIT",
